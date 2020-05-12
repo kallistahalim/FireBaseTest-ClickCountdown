@@ -21,3 +21,17 @@ firebase.database().ref().on("value", function(snapshot){
     console.error(error);
 });
 
+$("#click-me").on("click", function() {
+    count --;
+    firebase.database().ref().set({
+        clicks:count
+    });
+});
+
+$("#restart").on("click", function() {
+    firebase.database().ref().set({
+        clicks:100
+    });
+
+})
+
